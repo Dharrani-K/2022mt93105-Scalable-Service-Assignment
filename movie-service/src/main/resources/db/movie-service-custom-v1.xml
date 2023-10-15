@@ -1,0 +1,46 @@
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+						http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd
+						http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+	<!--				defaultValueConstraintName="DF__MOVIE_DETAILS__CREAT__058F9352"-->
+	<changeSet author="Dharrani.K" id="20231014-1">
+		<createTable tableName="MOVIE_DETAILS">
+			<column computed="false" name="ID" type="bigint"
+				autoIncrement="true">
+				<constraints nullable="false" primaryKey="true"
+					primaryKeyName="MOVIE_DETAILS_PK" />
+			</column>
+			<column computed="false" name="TITLE"
+				type="varchar(255)" />
+			<column computed="false" name="LANGUAGE" type="varchar(25)" />
+			<column computed="false" name="CAST" type="varchar(255)" />
+			<column computed="false" name="RELEASE_DATE" type="datetime" />
+			<column computed="false" defaultValueComputed="CURRENT_TIMESTAMP"
+				name="CREATE_TS" type="datetime" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="Dharrani.K" id="20231014-2">
+		<insert tableName="MOVIE_DETAILS">
+			<column name="TITLE" value="Finding Nemo" />
+			<column name="LANGUAGE" value="English" />
+			<column name="CAST"
+				value="Nemo" />
+			<column name="RELEASE_DATE" value="2003-05-30" />
+		</insert>
+
+		<insert tableName="MOVIE_DETAILS">
+			<column name="TITLE" value="The Amazing spider-man" />
+			<column name="LANGUAGE" value="English" />
+			<column name="CAST"
+				value="Andrew Garfield, Emma stone" />
+			<column name="RELEASE_DATE" value="2012-06-29" />
+		</insert>
+
+	</changeSet>
+</databaseChangeLog>
+
