@@ -14,6 +14,7 @@ WORKDIR source
 ARG env_var=dev
 ENV var=$env_var
 COPY --from=builder /source/movie-service-SNAPSHOT.jar ./
-ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
-CMD ["--spring.config.location=/config/", "--spring.profiles.active=${var}"]
+#ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
+ENTRYPOINT ["java", "-jar", "movie-service-SNAPSHOT.jar"]
+CMD ["--spring.profiles.active=${var}"]
 
