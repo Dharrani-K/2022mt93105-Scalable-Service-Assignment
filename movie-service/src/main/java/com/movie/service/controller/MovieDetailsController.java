@@ -37,14 +37,14 @@ public class MovieDetailsController {
 	@GetMapping("fetch-movie-by-id/{id}")
 	public ResponseEntity<MovieDetails> fetchMovieById(@PathVariable("id") Long id) throws IOException {
 
-		LOGGER.info("entering controller method fetchAllMovie");
+		LOGGER.info("entering controller method fetchMovieById");
 		MovieDetails response = movieDetailsSerice.getMovidetailById(id);
 
 		if (response == null) {
 			LOGGER.info("No records found for the given id");
 			return ResponseEntity.notFound().build();
 		}
-		LOGGER.info("exiting controller method fetchAllMovie");
+		LOGGER.info("exiting controller method fetchMovieById");
 		return ResponseEntity.ok().body(response);
 
 	}
