@@ -40,4 +40,12 @@ public class MovieDetailControllerTest {
 		verify(movieDetailsSerice).getAllMoviedetails();
 	}
 
+	@Test
+	@DisplayName("Fetch movie by ID junit test")
+	public void fetchMovieById() throws Exception {
+		MovieDetails response = new MovieDetails();
+		when(movieDetailsSerice.getMovidetailById(1L)).thenReturn(response);
+		mockMvc.perform(MockMvcRequestBuilders.get("/fetch-movie-by-id/{id}",1L)).andExpect(status().isOk());
+		verify(movieDetailsSerice).getMovidetailById(1L);
+	}
 }
