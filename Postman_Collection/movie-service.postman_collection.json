@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "f637f5d7-cc2c-4ff2-a4d0-f554a1e17681",
+		"name": "movie-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30807228"
+	},
+	"item": [
+		{
+			"name": "fetch-all-movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8094/movie-service/fetch-all-movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8094",
+					"path": [
+						"movie-service",
+						"fetch-all-movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch-movie-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8094/movie-service/fetch-movie-by-id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8094",
+					"path": [
+						"movie-service",
+						"fetch-movie-by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
